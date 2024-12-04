@@ -1,15 +1,15 @@
 import re
 
 
-def date_validation(date_str):
+def date_validation(date: str) -> bool:
     pattern = r'^20\d{6}$'
     
-    if not re.match(pattern, date_str):
+    if not re.match(pattern, date):
         return False
     
-    year = int(date_str[:4])
-    month = int(date_str[4:6])
-    day = int(date_str[6:])
+    year = int(date[:4])
+    month = int(date[4:6])
+    day = int(date[6:])
     
     if month < 1 or month > 12:
         return False
